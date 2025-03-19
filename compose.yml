@@ -1,0 +1,16 @@
+services:
+  gateway-set-up-tools:
+    build:
+      context: ./gateway
+    container_name: gateway-set-up-tools
+    networks:
+      - cdim-net
+    volumes:
+      - ./gateway/tools:/gateway/tools
+    logging:
+      options:
+        max-size: 50m
+
+networks:
+  cdim-net:
+    external: true
