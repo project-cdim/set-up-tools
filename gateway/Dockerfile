@@ -1,10 +1,10 @@
-FROM golang:1.23-alpine
+FROM golang:1.24-alpine3.22
 
 # upgrading packages and installing git
 RUN apk update && \
     apk upgrade --available && \
     apk add --no-cache \
-    curl
+    curl git
 
 WORKDIR /gateway/tools
 COPY tools/ .
